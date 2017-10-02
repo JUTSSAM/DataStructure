@@ -1,9 +1,20 @@
 #define MaxVertexNum 100
-//typedef int VertexType;	¶¥µãµÄÊı¾İÀàĞÍ
-typedef int EdgeType;		//±ßÉÏÈ¨ÖµÊı¾İÀàĞÍ
+//typedef int VertexType;	é¡¶ç‚¹çš„æ•°æ®ç±»å‹
+typedef int EdgeType;		//è¾¹ä¸Šæƒå€¼æ•°æ®ç±»å‹
 typedef struct{
-	VertexType Vex[MaxVertexNum];//¶¥µã±í
-	EdgeType Edge[MaxVertexNum][MaxVertexNum];//ÁÚ½Ó¾ØÕó
-	int vexnum, arcnum; //Í¼µ±Ç°µÄ¶¥µãÊıºÍ»¡Êı
+	VertexType Vex[MaxVertexNum];//é¡¶ç‚¹è¡¨
+	EdgeType Edge[MaxVertexNum][MaxVertexNum];//é‚»æ¥çŸ©é˜µ
+	int vexnum, arcnum; //å›¾å½“å‰çš„é¡¶ç‚¹æ•°å’Œå¼§æ•°
 }MGraph;
 
+int FirstNeighbor(MGraph G, int v); //å¯»æ‰¾ç¬¬ä¸€ä¸ªç›¸é‚»é¡¶ç‚¹
+
+int NextNeighbor(MGraph G, int v, int w); //å¯»æ‰¾ä¸‹ä¸€ä¸ªç›¸é‚»é¡¶ç‚¹
+
+void BFS(MGraph G, int v); 
+
+void BFSTraverse(MGraph G);
+
+void DFS(MGraph G, int v);
+
+void DFSTraverse(MGraph G);
